@@ -1,0 +1,29 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+def hourglass(a):
+    max_sum = None
+    for i in range(4):
+        for j in range(4):
+            curr_sum = 0
+            curr_sum += a[i][j]+a[i][j+1]+a[i][j+2]+\
+            a[i+1][j+1]+\
+            a[i+2][j]+a[i+2][j+1]+a[i+2][j+2]
+            #print("curr_sum :",curr_sum,"at i =",i,"and j =",j)
+            if max_sum == None:
+                max_sum = curr_sum
+            if curr_sum > max_sum:
+                max_sum = curr_sum
+    return max_sum
+if __name__ == '__main__':
+
+    arr = []
+    for _ in range(6):
+        arr.append(list(map(int, input().rstrip().split())))
+    print(hourglass(arr))
