@@ -1,0 +1,15 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+n = int(input())
+phone_book = {}
+for _ in range(n):
+    details = input().split()
+    phone_book[details[0]] = details[1]
+while True:
+    try:
+        name = input()
+        if name in phone_book:
+            print(name+"="+phone_book[name])
+        else:
+            print("Not found")
+    except:
+        break        
