@@ -1,0 +1,30 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+valid_email = r'^[a-z\.]+@gmail.com$'     #\. is added because in some test case . is considered as a valid character
+name_list = []
+
+def check_mail(name,mail):
+    if bool(re.match(valid_email, mail)):
+        name_list.append(name)
+        
+
+if __name__ == '__main__':
+    N = int(input().strip())
+
+    for N_itr in range(N):
+        first_multiple_input = input().rstrip().split()
+
+        firstName = first_multiple_input[0]
+
+        emailID = first_multiple_input[1]
+        
+        check_mail(firstName, emailID)
+    name_list = sorted(name_list)
+    for name in name_list:
+        print(name)
