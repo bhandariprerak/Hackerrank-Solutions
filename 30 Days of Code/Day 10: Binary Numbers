@@ -1,0 +1,30 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def max1(s):
+    #print(s)
+    ones = re.findall(r'[1]+',s)
+    print(len(max(ones)))
+
+
+def converttobinary(n):
+    rem=[]
+    q=None
+    while q!=0:
+        q = n//2
+        r = n%2
+        rem.insert(0,str(r))
+        n = q
+    max1(''.join(rem)) 
+    
+    
+
+if __name__ == '__main__':
+    n = int(input())
+    converttobinary(n)
+    
