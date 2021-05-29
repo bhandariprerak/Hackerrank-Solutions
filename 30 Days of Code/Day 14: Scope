@@ -1,0 +1,11 @@
+class Difference:
+    def __init__(self, a):
+        self.__elements = a
+
+    # Add your code here
+    def computeDifference(self):
+        h = max(self.__elements)
+        l = min(self.__elements)
+        self.maximumDifference = abs(h-l)
+
+# End of Difference class
