@@ -1,0 +1,27 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+def fine(ret, due):
+    d1,m1,y1 = ret
+    d2,m2,y2 = due
+    if y1<y2: 
+        return 0
+    elif y1 > y2:
+        return 10000
+    else:
+        if m1<m2:
+            return 0
+        elif m1>m2:
+            return 500*(m1-m2)
+        else:
+            if d1<=d2:
+                return 0
+            else:
+                return 15*(d1-d2)
+            
+        
+            
+
+if __name__=='__main__':
+    ret_date = list(map(int,input().split()))
+    due_date = list(map(int,input().split()))
+    print(fine(ret_date,due_date))
