@@ -1,0 +1,22 @@
+import math
+
+def check_prime(n):
+    if n == 1:
+        print("Not prime")
+        return
+    if n == 2:
+        print("Prime")
+        return
+    upper_range = math.ceil((math.sqrt(n))) + 1
+    #print("upper range:",upper_range)
+    for i in range(2,upper_range):
+        if n%i == 0:
+            print("Not prime")
+            return
+    print("Prime")
+    
+    
+#driver code
+t = int(input())
+for _ in range(t):
+    check_prime(int(input()))
