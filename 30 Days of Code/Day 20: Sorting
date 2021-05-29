@@ -1,0 +1,32 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def bubbleSort(n,a):
+    swap_count = 0
+    for _ in range(n):
+        fast_flag = 0
+        for i in range(len(a)-1):
+            if a[i]>a[i+1]:
+                a[i+1],a[i] = a[i],a[i+1]
+                swap_count+=1 
+                fast_flag = 1
+        if fast_flag == 0:
+            break
+    print("Array is sorted in {0} swaps.\n\
+First Element: {1}\n\
+Last Element: {2}\n".format(swap_count,a[0],a[n-1]))
+
+
+
+if __name__ == '__main__':
+    n = int(input().strip())
+
+    a = list(map(int, input().rstrip().split()))
+
+    # Write your code here
+    bubbleSort(n,a)
